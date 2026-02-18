@@ -5,7 +5,7 @@ import { metricMiddleware } from "./middleware/metric.middleware";
 app.use(metricMiddleware)
 app.get('/user',(req,res)=>{
   setTimeout(()=>{
-    res.send("hi");
+    res.status(200).send("hi");
   },Math.random()*2500)
 })
 

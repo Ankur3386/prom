@@ -12,12 +12,12 @@ res.on('finish',()=>{
     totalHttpRequest.inc({
     method:req.method,
     route:req.route ? req.route.path :req.path,
-    status:req.statusCode
+    status:res.statusCode
     })
     responseTime.observe({
         method:req.method,
         route:req.route ? req.route.path :req.path,
-        status:req.statusCode
+        status:res.statusCode
     },duration)
     activeUser.dec()
 })
